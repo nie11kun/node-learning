@@ -3,7 +3,10 @@ const baz = () => console.log('baz');
 
 const foo = () => {
     console.log('foo');
-    bar();
+    setTimeout(bar, 0);
+    new Promise((resolve, reject) =>
+            resolve("should be right after baz, before bar"))
+        .then(resolve => console.log(resolve));
     baz();
 }
 
