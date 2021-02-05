@@ -11,3 +11,7 @@ const foo = () => {
 }
 
 foo();
+console.log('END');
+
+process.nextTick(() => console.log("next tick"));
+setImmediate(() => console.log("immediate"));
