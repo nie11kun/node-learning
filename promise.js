@@ -22,16 +22,12 @@ done = false
 checkIfDone();
 
 
-const { rejects } = require('assert');
-const { Color } = require('chalk');
 const fs = require('fs');
-const { resolve } = require('path');
-
 const getFile = (fileName) => {
-    return new Promise((resolve, rejects) => {
+    return new Promise((resolve, reject) => {
         fs.readFile('./fs.json', (err, data) => {
             if (err) {
-                rejects(err)
+                reject(err)
                 return
             }
             resolve(data)
@@ -43,7 +39,7 @@ getFile("fs.json")
     .then(data => console.log(data.toString()))
     .catch(err => console.log(err))
 
-*/
+
 
 const fetch = require('node-fetch');
 
@@ -69,3 +65,31 @@ new Promise((resolve, reject) => {
 new Promise((resolve, reject) => {
     reject('error')
 }).catch(err => console.log(err))
+
+
+new Promise((resolve, reject) => {
+    throw new Error('error')
+})
+.catch(err => {throw new Error('error')})
+.catch(err => console.log(err))
+
+
+const fetch = require('node-fetch');
+
+const f1 = fetch('http://localhost/fs.json');
+const f2 = fetch('http://localhost/fs2.json');
+
+Promise.all([f1, f2])
+.then(response => console.log("array of results", response))
+//.then(([response1, response2]) => console.log("array of results", response1, response2))
+.catch(err => console.log(err))
+*/
+
+const first = new Promise((resolve, reject) => {
+    setTimeout(resolve, 500, 'first');
+})
+const second = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'second');
+})
+Promise.race([first, second]).then(res => console.log(res))
+
