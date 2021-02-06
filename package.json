@@ -1,11 +1,47 @@
 {
+  "name": "test-project",
+  "author": {
+    "name": "marco",
+    "email": "me@niekun.net",
+    "url": "https://niekun.net"
+  },
+  "contributors": [
+    {
+      "name": "marco",
+      "email": "me@niekun.net",
+      "url": "https://niekun.net"
+    }
+  ],
+  "bugs": "https://github.com/whatever/package/issues",
+  "homepage": "https://whatever.com/package",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "learning",
+    "nodejs"
+  ],
+  "description": "a node.js beginner guide",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whatever/testing.git"
+  },
+  "main": "./main.js",
+  "private": "true",
   "dependencies": {
+    "axios": "^0.21.1",
     "chalk": "^4.1.0",
     "inquirer": "^7.3.3",
     "minimist": "^1.2.5",
-    "progress": "^2.0.3"
+    "node-fetch": "^2.6.1",
+    "progress": "^2.0.3",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">=3.0.0"
   },
   "scripts": {
-    "start": "uname -r"
+    "start": "uname -r",
+    "test": "echo abcd"
   }
 }
