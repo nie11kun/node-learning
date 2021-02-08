@@ -16,6 +16,10 @@ fs.remove(p)
 */
 
 const rm = async (p) => {
+    if (!fs.existsSync(p)) {
+        console.log('folder does not exist')
+        return
+    }
     try {
         await fs.remove(p)
         console.log('remove success')
