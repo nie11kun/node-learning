@@ -5,6 +5,6 @@ try {
     } else {
         throw 123
     }
-} catch (e) {
-    console.log(e)
+} catch (err) {
+    console.log(err)
 }

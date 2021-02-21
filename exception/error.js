@@ -1,13 +1,13 @@
 process.on('uncaughtException', err => {
-    console.log('there was a uncaught error', err)
+    console.log('there was a uncaught error: ', err.message)
     process.exit(1)
 })
 
 const test = 123;
-throw test;
+//throw test;
 
 
-//throw new Error('error')
+throw new Error('error')
 
 //class childError extends Error {
 //}
