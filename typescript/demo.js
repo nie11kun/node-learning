@@ -3,6 +3,6 @@ function isAdult(user) {
 }
 var justine = {
     name: 'Justine',
-    age: 23
+    age: '23'
 };
-var isJustineAnAdult = isAdult(justine, 'string');
+var isJustineAnAdult = isAdult(justine);
